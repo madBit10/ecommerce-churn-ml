@@ -10,7 +10,7 @@ __pycache__/
 .ipynb_checkpoints/  
 
 # Data
-data/
+data/online_retail.csv
 
 # Artifacts — too large for GitHub                                                                                                                                                                           
 artifacts/models/
