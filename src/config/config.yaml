@@ -6,16 +6,27 @@
 # 1. file paths, 2. Model settings, 3. Traiing parameters
 
 data:
-    raw_data_path: ""
-    test_size: 
-    random_state: 
+    raw_data_path: "data/online_retail.csv"
+    test_size: 0.2
+    random_state: 42
+    churn_window_days: 90
 
+model:
+    type: "random_forest"
+    n_estimators: 100
+    random_state: 42
+    class_weight: "balanced"
 
+threshold_tuning:
+    target_recall: 0.85
+    
 artifacts: 
     model_path: "artifacts/models/model.pkl"
     scaler_path: "artifacts/models/scaler.pkl"
     features_path: "artifacts/models/features.json"
     metrics_path: "artifacts/metrics/metrics.json"
     logs_path: "artifacts/logs/training.log"
+    threshold_path: "artifacts/metrics/chosen_threshold.json"
 
+target_column: "Churn"
 
